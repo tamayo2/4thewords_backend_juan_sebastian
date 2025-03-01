@@ -542,3 +542,19 @@ FROM leyenda
 2025-03-01 14:33:04,281 - INFO - Apagando la aplicación de leyendas...
 2025-03-01 14:33:04,281 - INFO - Cerrando conexión con la base de datos...
 2025-03-01 14:33:04,281 - INFO - Conexión a la base de datos cerrada correctamente.
+2025-03-01 14:42:06,978 - INFO - Iniciando la aplicación de leyendas...
+2025-03-01 14:42:07,086 - INFO - SELECT DATABASE()
+2025-03-01 14:42:07,086 - INFO - [raw sql] {}
+2025-03-01 14:42:07,090 - INFO - SELECT @@sql_mode
+2025-03-01 14:42:07,090 - INFO - [raw sql] {}
+2025-03-01 14:42:07,092 - INFO - SELECT @@lower_case_table_names
+2025-03-01 14:42:07,092 - INFO - [raw sql] {}
+2025-03-01 14:42:07,094 - INFO - BEGIN (implicit)
+2025-03-01 14:42:07,095 - INFO - DESCRIBE `4thewords_prueba_juan_sebastian`.`leyenda`
+2025-03-01 14:42:07,096 - INFO - [raw sql] {}
+2025-03-01 14:42:07,113 - INFO - COMMIT
+2025-03-01 14:42:07,115 - INFO - Las tablas han sido creadas correctamente en la base de datos.
+2025-03-01 14:42:07,115 - INFO - Base de datos y tablas creadas exitosamente.
+2025-03-01 14:48:55,357 - INFO - Apagando la aplicación de leyendas...
+2025-03-01 14:48:55,358 - INFO - Cerrando conexión con la base de datos...
+2025-03-01 14:48:55,358 - INFO - Conexión a la base de datos cerrada correctamente.
