@@ -16,3 +16,6 @@ __pycache__/
 
 # Ignorar archivos de logs
 app.log
+
+# Ignorar configuraciones de JetBrains (PyCharm, IntelliJ)
+.idea/

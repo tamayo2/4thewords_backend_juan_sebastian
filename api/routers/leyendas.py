@@ -1,8 +1,8 @@
 from fastapi import APIRouter, HTTPException, Depends
 from sqlmodel import Session
-from app.database import get_session
-from app.schemas import LegendCreate, LegendRead, LegendUpdate
-from app.crud import create_legend, get_legends, get_legend, update_legend, delete_legend
+from api.database import get_session
+from api.schemas import LegendCreate, LegendRead, LegendUpdate
+from api.crud import create_legend, get_legends, get_legend, update_legend, delete_legend
 import logging
 
 # Configuración del logger

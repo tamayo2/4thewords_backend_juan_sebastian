@@ -1,7 +1,7 @@
 from sqlmodel import Session, select
 from fastapi import HTTPException, status
-from app.models import Leyenda
-from app.schemas import LegendCreate, LegendRead, LegendUpdate
+from api.models import Leyenda
+from api.schemas import LegendCreate, LegendRead, LegendUpdate
 import logging
 
 # Configuración de logging
