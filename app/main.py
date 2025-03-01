@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from contextlib import asynccontextmanager
-from api.database import create_db_and_tables, close_db_connection
+from app.database import create_db_and_tables, close_db_connection
 from fastapi.middleware.cors import CORSMiddleware
 import logging
 import uvicorn
@@ -9,7 +9,7 @@ import uvicorn
 logging.basicConfig(
     level=logging.DEBUG,
     format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler("api.log"), logging.StreamHandler()],
+    handlers=[logging.FileHandler("app.log"), logging.StreamHandler()],
 )
 logger = logging.getLogger(__name__)
 
@@ -62,7 +62,7 @@ app.add_middleware(
 )
 
 # Incluir el router de leyendas
-from api.routers import leyendas  # Importa el módulo de rutas de leyendas
+from app.routers import leyendas  # Importa el módulo de rutas de leyendas
 
 app.include_router(
     leyendas.router, prefix="/leyendas", tags=["leyendas"]
@@ -80,5 +80,5 @@ def root():
 
 # Ejecutar el servidor solo si se ejecuta directamente este script.
 if __name__ == "__main__":
-    uvicorn.run("api.main:api", host="127.0.0.1", port=8080, reload=True)
+    uvicorn.run("app.main:app", host="127.0.0.1", port=8080, reload=True)
 

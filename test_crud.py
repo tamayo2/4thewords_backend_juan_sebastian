@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
-from api.main import app
-from api.models import Leyenda
-from api.database import create_db_and_tables
+from app.main import app
+from app.models import Leyenda
+from app.database import create_db_and_tables
 from sqlmodel import Session
 
 client = TestClient(app)

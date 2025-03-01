@@ -78,7 +78,7 @@ _Reemplaza `usuario` y `contraseña` con tus credenciales de MySQL._
 Para iniciar el servidor en el puerto **8080**, usa el siguiente comando:
 
 ```bash
-uvicorn api.main:api --host 127.0.0.1 --port 8080 --reload
+uvicorn app.main:app --host 127.0.0.1 --port 8080 --reload
 ```
 
 ---

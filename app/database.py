@@ -1,5 +1,5 @@
 from sqlmodel import SQLModel, create_engine, Session
-from api.config import settings
+from app.config import settings
 import logging
 
 # Configuración del logger para registrar eventos y errores

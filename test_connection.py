@@ -1,5 +1,5 @@
 from sqlmodel import create_engine
-from api.config import settings
+from app.config import settings
 
 def test_db_connection():
     try:
