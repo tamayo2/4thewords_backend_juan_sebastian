@@ -2,13 +2,20 @@ from sqlmodel import SQLModel, Field
 from datetime import datetime
 
 class Leyenda(SQLModel, table=True):
-    #Modelo de datos que representa una leyenda en la base de datos.
-    id: int | None = Field(default=None, primary_key=True)
-    image_url: str = Field(nullable=False)  
-    name: str = Field(nullable=False, max_length=255)  
-    category: str = Field(nullable=False, max_length=100)  
-    description: str = Field(nullable=False)  
-    created_at: datetime = Field(nullable=False)  
-    province: str = Field(nullable=False, max_length=100)  
-    canton: str = Field(nullable=False, max_length=100)  
-    district: str = Field(nullable=False, max_length=100)  
+    """
+    Modelo de datos que representa una leyenda en la base de datos.
+    """
+
+    id: int | None = Field(default=None, primary_key=True, title="ID de la Leyenda")
+    image_url: str = Field(title="URL de la imagen", max_length=500)
+    name: str = Field(title="Nombre de la Leyenda", max_length=255)
+    category: str = Field(title="Categoría", max_length=100)
+    description: str = Field(title="Descripción de la Leyenda")
+    created_at: datetime = Field(
+        default_factory=datetime.utcnow,
+        title="Fecha de Creación",
+        description="Fecha en la que se creó la leyenda"
+    )
+    province: str = Field(title="Provincia", max_length=100)
+    canton: str = Field(title="Cantón", max_length=100)
+    district: str = Field(title="Distrito", max_length=100)
