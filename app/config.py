@@ -3,7 +3,6 @@ from dotenv import load_dotenv
 import os
 from pydantic import ConfigDict
 
-# Cargar variables del .env solo si no están ya definidas en el entorno
 if not os.getenv("DATABASE_URL"):
     load_dotenv()
 
@@ -12,9 +11,7 @@ class Settings(BaseSettings):
 
     model_config = ConfigDict(env_file=".env")  
 
-# Instancia de configuración
 settings = Settings()
 
-# Comprobación si la variable DATABASE_URL está presente
 if not settings.DATABASE_URL:
-    raise ValueError("DATABASE_URL no está configurada. Asegurarse de que la variable esté en el archivo .env o en el entorno.")
+    raise ValueError("DATABASE_URL no esta configurada. Asegurarse de que la variable este en el archivo .env o en el entorno.")

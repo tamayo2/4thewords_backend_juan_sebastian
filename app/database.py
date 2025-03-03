@@ -2,11 +2,8 @@ from sqlmodel import SQLModel, create_engine, Session
 from app.config import settings
 import logging
 
-# Configuración del logger para registrar eventos y errores
 logger = logging.getLogger(__name__)
 
-# Crear el motor de la base de datos con SQLAlchemy
-# 'echo=True' habilita el logging de las consultas SQL en la consola (útil para depuración)
 engine = create_engine(settings.DATABASE_URL, echo=True)
 
 def get_session():
@@ -45,4 +42,4 @@ def close_db_connection():
     try:
         logger.info("Cerrando conexión con la base de datos...")
     except Exception as e:
-        logger.error(f"Error al cerrar la conexión con la base de datos: {e}")
+        logger.error(f"Error al cerrar la conexion con la base de datos: {e}")
