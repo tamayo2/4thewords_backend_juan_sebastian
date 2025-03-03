@@ -4,14 +4,12 @@ from app.models import Leyenda
 from app.schemas import LegendCreate, LegendRead, LegendUpdate
 import logging
 
-# Configuración de logging
 logger = logging.getLogger(__name__)
 
-# Función para crear una leyenda
 def create_legend(session: Session, legend_data: LegendCreate) -> LegendRead:
     try:
-        # Creamos el objeto de la leyenda
-        legend = Leyenda(**legend_data.model_dump())  # Usamos .model_dump() para obtener los datos del Pydantic model
+
+        legend = Leyenda(**legend_data.model_dump())
         session.add(legend)
         session.commit()
         session.refresh(legend)
@@ -24,7 +22,6 @@ def create_legend(session: Session, legend_data: LegendCreate) -> LegendRead:
             detail=f"Error al crear la leyenda: {e}"
         )
 
-# Función para obtener todas las leyendas
 def get_legends(session: Session, skip: int = 0, limit: int = 100) -> list[LegendRead]:
     try:
         legends = session.exec(select(Leyenda).offset(skip).limit(limit)).all()
@@ -36,7 +33,6 @@ def get_legends(session: Session, skip: int = 0, limit: int = 100) -> list[Legen
             detail=f"Error al obtener las leyendas: {e}"
         )
 
-# Función para obtener una leyenda por su ID
 def get_legend(session: Session, legend_id: int) -> LegendRead | None:
     try:
         legend = session.exec(select(Leyenda).where(Leyenda.id == legend_id)).first()
@@ -48,12 +44,10 @@ def get_legend(session: Session, legend_id: int) -> LegendRead | None:
             detail=f"Error al obtener la leyenda con ID {legend_id}: {e}"
         )
 
-# Función para actualizar una leyenda
 def update_legend(legend_id: int, legend_data: LegendUpdate, session: Session) -> LegendRead | None:
     try:
         legend = session.exec(select(Leyenda).where(Leyenda.id == legend_id)).first()
         if legend:
-            # Actualizamos los campos manualmente si son proporcionados
             if legend_data.name is not None:
                 legend.name = legend_data.name
             if legend_data.description is not None:
@@ -77,7 +71,6 @@ def update_legend(legend_id: int, legend_data: LegendUpdate, session: Session) -
             detail=f"Error al actualizar la leyenda con ID {legend_id}: {e}"
         )
 
-# Función para eliminar una leyenda
 def delete_legend(legend_id: int, session: Session) -> bool:
     try:
         legend = session.exec(select(Leyenda).where(Leyenda.id == legend_id)).first()

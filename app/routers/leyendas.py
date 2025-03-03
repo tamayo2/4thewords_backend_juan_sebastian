@@ -11,10 +11,8 @@ from app.crud.leyendas import (
     delete_legend,
 )
 
-# Configuración del logger
 logger = logging.getLogger(__name__)
 
-# Inicialización del router con prefijo y tags
 router = APIRouter(tags=["leyendas"])
 
 
