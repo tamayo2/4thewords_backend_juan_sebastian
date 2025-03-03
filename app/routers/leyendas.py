@@ -3,7 +3,7 @@ from fastapi import APIRouter, HTTPException, Depends, status
 from sqlmodel import Session
 from app.database import get_session
 from app.schemas import LegendCreate, LegendRead, LegendUpdate
-from app.crud import (
+from app.crud.leyendas import (
     create_legend,
     get_legends,
     get_legend,
