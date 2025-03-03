@@ -56,7 +56,7 @@ VALUES
 
     ('La Llorona', 'Leyenda Costarricense',
     'Una mujer que llora por la pérdida de sus hijos, deambulando por las noches buscando almas para reemplazar los suyos.',
-    'https://images4.alphacoders.com/134/thumb-1920-1345123.jpeg', '1600-01-01 00:00:00', 'Heredia', 'San Rafael', 'San Rafael');
+    'https://th.bing.com/th/id/OIP.lp0VB5cpuZUymQf6jV6G9QHaE8?rs=1&pid=ImgDetMain', '1600-01-01 00:00:00', 'Heredia', 'San Rafael', 'San Rafael');
 
 -- Confirmar inserción de datos
 SELECT * FROM leyendas;
