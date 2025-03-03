@@ -58,6 +58,13 @@ def update_legend(legend_id: int, legend_data: LegendUpdate, session: Session) -
                 legend.category = legend_data.category
             if legend_data.created_at is not None:
                 legend.created_at = legend_data.created_at
+            if legend_data.province is not None:
+                legend.province = legend_data.province
+            if legend_data.canton is not None:
+                legend.canton = legend_data.canton
+            if legend_data.district is not None:
+                legend.district = legend_data.district
+
             session.commit()
             session.refresh(legend)
             return LegendRead.model_validate(legend)

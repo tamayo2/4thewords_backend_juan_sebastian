@@ -12,7 +12,6 @@ from app.crud.leyendas import (
 )
 
 logger = logging.getLogger(__name__)
-
 router = APIRouter(tags=["leyendas"])
 
 
